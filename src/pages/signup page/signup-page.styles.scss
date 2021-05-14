@@ -1,0 +1,88 @@
+.signup-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  .signup-card {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 10px #0000001a;
+    border-radius: 8px;
+    padding: 2em;
+    .signup-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 20rem;
+      gap: 2em;
+      .signup-socials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 1em;
+
+        .socials {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .or-signup-with {
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+          font-size: 12px;
+          .hline {
+            height: 1px;
+            width: 60px;
+            background: black;
+          }
+        }
+      }
+
+      .signup-with-email {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 1.2em;
+
+        .signup-name {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .signup-email {
+          width: 100%;
+        }
+
+        .signup-password {
+          width: 100%;
+          .password-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: bold;
+            a {
+              color: #1b9cfc;
+            }
+          }
+        }
+        .take-me-to-the-village {
+          width: 100%;
+        }
+        .existing-account {
+          font-size: 12px;
+          font-weight: normal;
+          a {
+            color: #1b9cfc;
+          }
+        }
+      }
+    }
+  }
+}

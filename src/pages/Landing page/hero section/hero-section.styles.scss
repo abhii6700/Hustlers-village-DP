@@ -1,0 +1,28 @@
+.hero-section {
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+
+  .hero-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding-top: 8em;
+
+    .hero-title {
+      span {
+        color: #1b9cfc;
+      }
+    }
+  }
+
+  .hero-enter-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+   
+  }
+}

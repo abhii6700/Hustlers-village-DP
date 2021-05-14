@@ -1,0 +1,70 @@
+.secondary-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  text-align: center;
+  color: black;
+  border: 2px black solid;
+  background: none;
+  border-radius: 5px;
+  padding: 1.3em 1.5em;
+}
+
+.icon-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  text-align: center;
+  color: white;
+  border: none;
+  background: black;
+  border-radius: 5px;
+  padding: 1.3em 1.3em;
+  .label {
+    margin-right: 0.5em;
+  }
+}
+
+.blue {
+  border: 2px #1b9cfc solid;
+  background: #1b9cfc;
+}
+
+.google-btn {
+  flex-direction: row-reverse;
+  background: var(--gray-100) 0% 0% no-repeat padding-box;
+  background: #f7fafc 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  color: #2d3748;
+  .label {
+    margin-left: 0.5em;
+    margin-right: 0;
+  }
+}
+
+.github-btn {
+  flex-direction: row-reverse;
+  background: var(--gray-800) 0% 0% no-repeat padding-box;
+  background: #2d3748 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  .label {
+    margin-left: 0.5em;
+    margin-right: 0;
+  }
+}
+
+.dribbble-btn {
+  flex-direction: row-reverse;
+  background: #ed64a6 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  .label {
+    margin-left: 0.5em;
+    margin-right: 0;
+  }
+}
+
+.submit-form-btn {
+  width: 100%;
+}
