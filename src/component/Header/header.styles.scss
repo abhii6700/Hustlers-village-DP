@@ -24,4 +24,25 @@
       }
     }
   }
+
+  .options-mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .content-wrapper {
+      .options {
+        display: none;
+      }
+      .options-mobile {
+        display: block;
+        height: 30px;
+        width: 30px;
+        .hamburger-menu {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
 }

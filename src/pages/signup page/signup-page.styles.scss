@@ -85,4 +85,12 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .signup-card {
+      background: none;
+      box-shadow: none;
+      padding: 0;
+    }
+  }
 }

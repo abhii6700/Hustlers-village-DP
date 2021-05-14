@@ -6,11 +6,12 @@ interface Btnprops {
     label: string,
     icon?: any
     alt?: any
+    onclick?: any
 }
 
-const Button: React.FC<Btnprops> = ({ classname, label, icon, alt }) => {
+const Button: React.FC<Btnprops> = ({ classname, label, icon, alt, onclick }) => {
     return (
-        <button className={classname}>
+        <button className={classname} onClick={onclick}>
             <div className='label'>{label}</div>
             {
                 icon? icon: ''

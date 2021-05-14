@@ -78,4 +78,12 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .login-card {
+      background: none;
+      box-shadow: none;
+      padding: 0;
+    }
+  }
 }

@@ -1,13 +1,43 @@
-import react from "react";
+import React, {useState} from 'react' 
 import Button from "../../component/button/button";
 import "./login-page.styles.scss";
+import {Link} from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
 import { FiGithub } from "react-icons/fi";
 import { FiDribbble } from "react-icons/fi";
 import { FaArrowRight } from "react-icons/fa";
 import Input from "../../component/input/input";
 
-const LoginPage = () => {
+interface Lprops{
+  user: {
+    email: string,
+    password: string
+  }[]
+}
+
+const LoginPage: React.FC = () => {
+  const[user, setUser] = useState<Lprops['user']>([
+    {
+      email: '',
+      password: ''
+    }
+  ])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+    setUser({
+        ...user,
+        [e.target.name]: e.target.value
+        
+    })
+}
+
+const handleSubmit = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  e.preventDefault()
+
+  console.log(user)
+}
+
+
   return (
     <div className="login-page container">
       <div className="login-card">
@@ -43,10 +73,11 @@ const LoginPage = () => {
             <div className="login-email">
               <Input
                 classname="input input-credentials"
-                text="text"
+                text="email"
                 name="email"
                 placeholder="Enter Email address"
                 label="Email"
+                onchange = {handleChange}
               />
             </div>
             <div className="login-password">
@@ -59,9 +90,10 @@ const LoginPage = () => {
               <div>
                 <Input
                   classname="input input-credentials"
-                  text="text"
+                  text="password"
                   name="Password"
                   placeholder="Enter Password"
+                  onchange={handleChange}
                 />
               </div>
             </div>
@@ -70,12 +102,13 @@ const LoginPage = () => {
                 classname="icon-btn submit-form-btn"
                 label="Take me to the Village"
                 icon={<FaArrowRight />}
+                onclick={handleSubmit}
               />
             </div>
             <div className="existing-account">
               <p>
                 Don’t have an account on HustlersVillage?{" "}
-                <a href="/">Sign up</a>
+                <Link to="/signup">Sign up</Link>
               </p>
             </div>
           </div>

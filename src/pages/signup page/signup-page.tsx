@@ -1,13 +1,43 @@
-import react from "react";
 import Button from "../../component/button/button";
 import "./signup-page.styles.scss";
+import {Link} from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
 import { FiGithub } from "react-icons/fi";
 import { FiDribbble } from "react-icons/fi";
 import { FaArrowRight } from "react-icons/fa";
 import Input from "../../component/input/input";
+import { useState } from "react";
 
-const SignUp = () => {
+interface Sprops{
+  newuser:{
+    firstname: string,
+    lastname: string,
+    email: string,
+    password: string
+  }[]
+}
+
+const SignUp: React.FC = () => {
+  const [newuser, setNewuser] = useState<Sprops['newuser']>([{
+    firstname:'',
+    lastname: '',
+    email: '',
+    password: ''
+  }])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+      setNewuser({
+        ...newuser,
+        [e.target.name] : e.target.value
+      })
+    }
+
+    const handleClick = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+      e.preventDefault()
+
+      console.log(newuser)
+    }
+
   return (
     <div className="signup-page container">
       <div className="signup-card">
@@ -48,6 +78,7 @@ const SignUp = () => {
                 name="first-name"
                 placeholder="Enter First name"
                 label="First name"
+                onchange= {handleChange}
               />
               </div>
               <div className="signup-last-name">
@@ -57,16 +88,18 @@ const SignUp = () => {
                 name="last-name"
                 placeholder="Enter Last name"
                 label="last name"
+                onchange= {handleChange}
               />
             </div>
             </div>
             <div className="signup-email">
               <Input
                 classname="input input-credentials"
-                text="text"
+                text="email"
                 name="email"
                 placeholder="Enter Email address"
                 label="Email"
+                onchange={handleChange}
               />
             </div>
             <div className="signup-password">
@@ -79,9 +112,10 @@ const SignUp = () => {
               <div>
                 <Input
                   classname="input input-credentials"
-                  text="text"
+                  text="password"
                   name="Password"
                   placeholder="Enter Password"
+                  onchange={handleChange}
                 />
               </div>
             </div>
@@ -90,12 +124,13 @@ const SignUp = () => {
                 classname="icon-btn submit-form-btn"
                 label="Take me to the Village"
                 icon={<FaArrowRight />}
+                onclick={handleClick}
               />
             </div>
             <div className="existing-account">
               <p>
               Already have an account?{" "}
-                <a href="/">Log in</a>
+                <Link to="/login">Log in</Link>
               </p>
             </div>
           </div>

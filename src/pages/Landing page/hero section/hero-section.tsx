@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../../../component/button/button'
+import {Link} from 'react-router-dom'
 import './hero-section.styles.scss'
 import {FaArrowRight} from 'react-icons/fa'
 import background from '../../../assets/Hero-vector.svg'
-import Header from '../../../component/Header/header'
 import Input from '../../../component/input/input'
 
-const HeroSection = () => {
+interface HSprops{
+    username:{
+        yourname: string
+    }[]
+}
+
+const HeroSection: React.FC = () => {
+    const [username, setUsername] = useState<HSprops['username']>([{
+            yourname: 'hustlersvillage.com/'
+    }])
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+        setUsername({
+            ...username,
+            [e.target.name] : `hustlersvillage.com/${e.target.value}`
+        })
+    }
+
+    const handleClick = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void =>{
+        e.preventDefault()
+        console.log(username)
+    }
+
+
     return (
         
         <div className='hero-section container' style={{ backgroundImage: `url(${background})`}}>
@@ -16,10 +39,20 @@ const HeroSection = () => {
                 <h1>let your <span>hustle</span> speak for itself.</h1>
             </div>
             <div className="hero-enter-name"> 
-                <Input classname='input' name='hero-input'  text='text' placeholder='hustlersvillage.com/your-name'/>
-                <a href='/'><Button classname='icon-btn blue' label='start Hustling'  icon={<FaArrowRight/>}/></a>
+                <Input classname='input'
+                 name='yourname' 
+                  text='text'
+                   placeholder='your-name'
+                   onchange={handleChange}
+                   />
+                <Link to='/select-role'><Button
+                  classname='icon-btn blue' 
+                  label='start Hustling'  
+                  icon={<FaArrowRight/>}
+                  onclick={handleClick}
+                  /></Link>
             </div>
-            <div className='hero-note'>
+            <div className='hero-subtitle'>
                 <p>It’s free, and takes less than a minute</p>
             </div>
             </div>

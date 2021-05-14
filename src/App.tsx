@@ -6,7 +6,6 @@ import './App.css';
 import HeroSection from './pages/Landing page/hero section/hero-section';
 import LoginPage from './pages/login page/login-page';
 import SignUp from './pages/signup page/signup-page';
-import UserRoleCard from './component/user role card/user-role-card';
 import UserRole from './pages/user role page/user-role';
 
 

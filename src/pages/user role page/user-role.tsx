@@ -1,4 +1,4 @@
-import React, {JSXElementConstructor, useState} from 'react'
+import React, { useState} from 'react'
 import UserRoleCard from '../../component/user role card/user-role-card'
 import './user-role.styles.scss'
 import designer from '../../assets/Designer.svg'
@@ -15,7 +15,7 @@ interface URprops{
 }
 
 const UserRole: React.FC = () => {
-    const [userroles, setUserRoles] = useState<URprops['userroles']>([{
+    const [userroles] = useState<URprops['userroles']>([{
         title: 'Designer',
         image: designer
     }, {
