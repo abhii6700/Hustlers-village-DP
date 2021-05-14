@@ -47,7 +47,7 @@ const SignUp: React.FC = () => {
       <div className="signup-card">
         <div className="signup-content-wrapper">
           <div className="signup-title">
-            <h2>Log in to your Account</h2>
+            <h2>Register to HustlersVillage</h2>
           </div>
           <div className="signup-socials">
             <div className="socials">
