@@ -1,6 +1,6 @@
 import Button from "../../component/button/button";
 import "./signup-page.styles.scss";
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
 import { FiGithub } from "react-icons/fi";
 import { FiDribbble } from "react-icons/fi";
@@ -32,10 +32,14 @@ const SignUp: React.FC = () => {
       })
     }
 
+    const history = useHistory()
+
+
     const handleClick = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
       e.preventDefault()
 
       console.log(newuser)
+      history.push('/select-role')
     }
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../../../component/button/button'
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import './hero-section.styles.scss'
 import {FaArrowRight} from 'react-icons/fa'
 import background from '../../../assets/Hero-vector.svg'
@@ -24,13 +24,17 @@ const HeroSection: React.FC = () => {
         })
     }
 
+    const history = useHistory()
+
     const handleClick = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void =>{
         e.preventDefault()
         console.log(username)
+        history.push('/select-role')
     }
 
-
+    
     return (
+    
         
         <div className='hero-section container' style={{ backgroundImage: `url(${background})`}}>
             {/* <Header/> */}
@@ -45,12 +49,12 @@ const HeroSection: React.FC = () => {
                    placeholder='your-name'
                    onchange={handleChange}
                    />
-                <Link to='/select-role'><Button
+                <Button
                   classname='icon-btn blue' 
                   label='start Hustling'  
                   icon={<FaArrowRight/>}
                   onclick={handleClick}
-                  /></Link>
+                  />
             </div>
             <div className='hero-subtitle'>
                 <p>It’s free, and takes less than a minute</p>
