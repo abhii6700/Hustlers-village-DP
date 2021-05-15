@@ -42,13 +42,18 @@ const HeroSection: React.FC = () => {
             <div className="hero-title">
                 <h1>let your <span>hustle</span> speak for itself.</h1>
             </div>
-            <div className="hero-enter-name"> 
-                <Input classname='input'
+            <div className="hero-enter-name">
+                <div className='name-input'>
+                    <p>hustlersvillage.com/</p>
+                    <Input classname='input'
                  name='yourname' 
                   text='text'
                    placeholder='your-name'
                    onchange={handleChange}
                    />
+                
+                </div>
+                
                 <Button
                   classname='icon-btn blue' 
                   label='start Hustling'  

@@ -1,6 +1,6 @@
 import Button from "../../component/button/button";
 import "./signup-page.styles.scss";
-import {Link, useHistory} from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
 import { FiGithub } from "react-icons/fi";
 import { FiDribbble } from "react-icons/fi";
@@ -8,8 +8,8 @@ import { FaArrowRight } from "react-icons/fa";
 import Input from "../../component/input/input";
 import { useState } from "react";
 
-interface Sprops{
-  newuser:{
+interface Sprops {
+  newuser: {
     firstname: string,
     lastname: string,
     email: string,
@@ -19,28 +19,28 @@ interface Sprops{
 
 const SignUp: React.FC = () => {
   const [newuser, setNewuser] = useState<Sprops['newuser']>([{
-    firstname:'',
+    firstname: '',
     lastname: '',
     email: '',
     password: ''
   }])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-      setNewuser({
-        ...newuser,
-        [e.target.name] : e.target.value
-      })
-    }
+    setNewuser({
+      ...newuser,
+      [e.target.name]: e.target.value
+    })
+  }
 
-    const history = useHistory()
+  const history = useHistory()
 
 
-    const handleClick = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-      e.preventDefault()
+  const handleClick = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+    e.preventDefault()
 
-      console.log(newuser)
-      history.push('/select-role')
-    }
+    console.log(newuser)
+    history.push('/select-role')
+  }
 
   return (
     <div className="signup-page container">
@@ -75,30 +75,30 @@ const SignUp: React.FC = () => {
           </div>
           <div className="signup-with-email">
             <div className="signup-name">
-            <div className="signup-first-name">
-              <Input
-                classname="input input-name"
-                text="text"
-                name="first-name"
-                placeholder="Enter First name"
-                label="First name"
-                onchange= {handleChange}
-              />
+              <div className="signup-first-name">
+                <Input
+                  classname="input input-name"
+                  text="text"
+                  name="first-name"
+                  placeholder="Enter First name"
+                  label="First name"
+                  onchange={handleChange}
+                />
               </div>
               <div className="signup-last-name">
-              <Input
-                classname="input input-name"
-                text="text"
-                name="last-name"
-                placeholder="Enter Last name"
-                label="last name"
-                onchange= {handleChange}
-              />
-            </div>
+                <Input
+                  classname="input input-name"
+                  text="text"
+                  name="last-name"
+                  placeholder="Enter Last name"
+                  label="last name"
+                  onchange={handleChange}
+                />
+              </div>
             </div>
             <div className="signup-email">
               <Input
-                classname="input input-credentials"
+                classname="input"
                 text="email"
                 name="email"
                 placeholder="Enter Email address"
@@ -115,7 +115,7 @@ const SignUp: React.FC = () => {
               </div>
               <div>
                 <Input
-                  classname="input input-credentials"
+                  classname="input"
                   text="password"
                   name="Password"
                   placeholder="Enter Password"
@@ -133,7 +133,7 @@ const SignUp: React.FC = () => {
             </div>
             <div className="existing-account">
               <p>
-              Already have an account?{" "}
+                Already have an account?{" "}
                 <Link to="/login">Log in</Link>
               </p>
             </div>

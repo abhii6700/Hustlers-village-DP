@@ -72,7 +72,7 @@ const handleSubmit = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
           <div className="login-with-email">
             <div className="login-email">
               <Input
-                classname="input input-credentials"
+                classname="input"
                 text="email"
                 name="email"
                 placeholder="Enter Email address"
@@ -89,7 +89,7 @@ const handleSubmit = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
               </div>
               <div>
                 <Input
-                  classname="input input-credentials"
+                  classname="input"
                   text="password"
                   name="Password"
                   placeholder="Enter Password"

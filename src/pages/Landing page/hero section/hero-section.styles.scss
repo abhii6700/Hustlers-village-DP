@@ -32,6 +32,21 @@
     justify-content: center;
     align-items: center;
     gap: 2em;
+
+    .name-input {
+      display: flex;
+      align-items: center;
+      width: 290px;
+      height: 20px;
+      color: black;
+      border: none;
+      background: #edf2f7;
+      border-radius: 5px;
+      padding: 1.3em;
+      p {
+        font-weight: 600;
+      }
+    }
   }
 
   @media (max-width: 768px) {
