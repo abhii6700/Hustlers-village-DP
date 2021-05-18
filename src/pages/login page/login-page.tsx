@@ -7,6 +7,7 @@ import { FiGithub } from "react-icons/fi";
 import { FiDribbble } from "react-icons/fi";
 import { FaArrowRight } from "react-icons/fa";
 import Input from "../../component/input/input";
+import {signInWithGoogle} from '../../component/firebase/firebase.utils'
 
 interface Lprops{
   user: {
@@ -51,6 +52,7 @@ const handleSubmit = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                 classname="icon-btn google-btn"
                 label="Google"
                 icon={<FcGoogle />}
+                onclick={signInWithGoogle}
               />
               <Button
                 classname="icon-btn github-btn"
@@ -91,7 +93,7 @@ const handleSubmit = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                 <Input
                   classname="input"
                   text="password"
-                  name="Password"
+                  name="password"
                   placeholder="Enter Password"
                   onchange={handleChange}
                 />

@@ -14,7 +14,7 @@ interface HSprops{
 
 const HeroSection: React.FC = () => {
     const [username, setUsername] = useState<HSprops['username']>([{
-            yourname: 'hustlersvillage.com/'
+            yourname: ' '
     }])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
