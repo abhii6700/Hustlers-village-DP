@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import Header from './component/Header/header'
 import {Switch, Route} from 'react-router-dom'
 
@@ -9,7 +9,13 @@ import SignUp from './pages/signup page/signup-page';
 import UserRole from './pages/user role page/user-role';
 
 
+
+
+
 function App() {
+ 
+  
+
   return (
     <div className='app'>
 
@@ -27,3 +33,4 @@ function App() {
 }
 
 export default App;
+
